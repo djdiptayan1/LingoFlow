@@ -1,5 +1,5 @@
 import React from "react";
-import loadingGif from "../assets/loading-40.gif"; // Import your custom loading GIF
+import loadingGif from "../assets/loading-1.gif"; // Import your custom loading GIF
 
 const LoadingScreen = () => {
     return (
