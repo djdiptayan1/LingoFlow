@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+
 const TranslationCard = () => {
     const [inputText, setInputText] = useState("");
     const [reversedText, setReversedText] = useState(""); // Changed the state variable name
@@ -37,8 +38,8 @@ const TranslationCard = () => {
 
 
     return (
-        <div className="w-full max-w-md mx-auto p-4 bg-white shadow-md rounded-md">
-            <h1 className="text-2xl font-semibold mb-4">Text Reversal</h1>
+        <div className="h-96 w-100 max-w-md mx-auto p-4 bg-white shadow-md rounded-md">
+            <h1 className="text-2xl font-semibold mb-4 text-center">English To Hindi</h1>
             <input
                 type="text"
                 placeholder="Enter text"

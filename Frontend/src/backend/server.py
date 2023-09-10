@@ -8,7 +8,9 @@ CORS(app)
 def reverse_text():
     try:
         data = request.get_json()
+        # get the input text from the request
         input_text = data["input"]
+        
         reversed_text = input_text[::-1]  # Reverse the input text
         print(f"Received Input text: {input_text}")  # Log the received input text
         response_data = {"reversedText": reversed_text}
