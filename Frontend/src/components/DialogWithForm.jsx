@@ -68,19 +68,19 @@ function DialogWithForm() {
                     onClick={handleOpen}
                     className="cursor-pointer h-9 w-9 sm:h-12 sm:w-12"
                 />
-                {open && <div className="fixed inset-0 bg-white opacity-50 blur flex items-center justify-center"></div>}
+                {open && <div className="fixed inset-0 backdrop-blur-sm bg-white opacity-60 blur flex items-center justify-center"></div>}
                 <Dialog
                     size="xs"
                     open={open}
                     handler={handleOpen}
                     className="bg-transparent shadow-none flex items-center justify-center"
                 >
-                    <Card className="w-full max-w-[30rem]">
-                        <CardHeader>
+                    <Card className="h-full max-w-[30rem] rounded-md">
+                        <CardHeader className="p-4">
                             <img
                                 src="https://images.unsplash.com/photo-1657302156083-2e61fb23d161?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2970&q=80"
                                 alt="Card Image"
-                                className="w-full rounded-md shadow-lg"
+                                className="w-full rounded-2xl shadow-lg"
                             />
                         </CardHeader>
                         <h1 className="text-2xl font-semibold text-center">English To हिंदी</h1>

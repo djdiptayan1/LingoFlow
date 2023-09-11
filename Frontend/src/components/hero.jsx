@@ -1,6 +1,6 @@
 import React from "react";
 import "animate.css";
-import heroimg from "../assets/hero.png";
+import heroimg from "../assets/hero2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -8,8 +8,8 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 const hero = () => {
     return (
         <>
-            <div className="bg-blue-900 h-screen w-screen">
-                <img src={heroimg} alt="hero" className="h-screen w-screen" />
+            <div className="h-screen w-screen">
+                <img src={heroimg} alt="hero" className="h-screen w-screen z-999" />
 
                 {/* Scroll down animated text with arrow */}
                 <div className="absolute bottom-0 flex flex-col items-center left-1/2 transform -translate-x-1/2 text-white mb-4">
