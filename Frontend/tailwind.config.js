@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         Pacifico: ["Pacifico", "cursive"],
+        Prism: ["Tilt Prism", "cursive"],
       },
     },
   },

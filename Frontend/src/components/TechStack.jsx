@@ -7,40 +7,30 @@ import node from "../assets/node.png";
 import tail from "../assets/tailwind.png";
 import react from "../assets/react.png";
 
+const imglist = [
+    "https://i.postimg.cc/mhxb6Spr/flask.png",
+    "https://i.postimg.cc/y1Q0LSjX/tensorflow.png",
+    "https://i.postimg.cc/9MKRCZg6/python.png",
+    "https://i.postimg.cc/02mm5Xsc/pytorch.png",
+    "https://i.postimg.cc/9XDZKFN3/node.png",
+    "https://i.postimg.cc/52VzX591/tailwind.png",
+    "https://i.postimg.cc/R0CnRMnD/react.jpg",
+    
+]
+
 
 const TechStack = () => {
     return (
         <>
             <h1 className="text-5xl dark:text-white font-Pacifico flex justify-center items-center mt-8 pb-5">Tech Stack</h1>
-            <div className="flex justify-center"> {/* Wrap the flex container around the images */}
-                <div className="flex flex-col items-center p-4">
-                    <img className="w-24 h-24 mb-3 mt-2" src={flask} alt="flask" />
-                </div>
-
-                <div className="flex flex-col items-center p-4">
-                    <img className="w-24 h-24 mb-3 mt-2" src={tensorflow} alt="tensorflow" />
-                </div>
-
-                <div className="flex flex-col items-center p-4">
-                    <img className="w-24 h-24 mb-3 mt-2" src={python} alt="python" />
-                </div>
-
-                <div className="flex flex-col items-center p-4">
-                    <img className="w-24 h-24 mb-3 mt-2" src={pytorch} alt="pytorch" />
-                </div>
-
-                <div className="flex flex-col items-center p-4">
-                    <img className="w-24 h-24 mb-3 mt-2" src={react} alt="react" />
-                </div>
-
-                <div className="flex flex-col items-center p-4">
-                    <img className="w-24 h-24 mb-3 mt-2" src={tail} alt="tailwind" />
-                </div>
-
-                <div className="flex flex-col items-center p-4">
-                    <img className="w-24 h-24 mb-3 mt-2" src={node} alt="NodeJS" />
-                </div>
-            </div>
+            
+            <section className="flex md:flex-row flex-wrap justify-center items-center">
+                {imglist.map((img, index) => (
+                    <div id={index} className="flex flex-col items-center p-4">
+                        <img className="w-auto h-24 mb-3 mt-2" src={img} alt="flask" />
+                    </div>
+                ))}
+            </section>
         </>
     );
 };
