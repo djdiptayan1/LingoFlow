@@ -90,7 +90,7 @@ function DialogWithForm() {
                             <img
                                 src={logo}
                                 alt="Card Image"
-                                className="h-72 w-72 rounded-2xl shadow-lg"
+                                className="h-72 w-72 rounded-2xl "
                             />
                         </CardHeader>
                         <h1 className="text-2xl font-semibold text-center">English To हिंदी</h1>
