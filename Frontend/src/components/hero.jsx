@@ -12,7 +12,7 @@ const hero = () => {
         backgroundPosition: "center center", // Adjust to your needs
         backgroundRepeat: "no-repeat", // Adjust to your needs
         // Apply blur effect using backdrop-filter
-        backdropFilter: "blur(10px)", // Adjust the blur strength as needed
+        backdropFilter: "blur(40px)", // Adjust the blur strength as needed
     };
 
     return (

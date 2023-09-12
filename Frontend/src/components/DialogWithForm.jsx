@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import menu from "../assets/menu.png";
 import axios from "axios";
+import logo from "../assets/logo2.png";
+import microphoneIcon from "../assets/microphone.png"; // Import microphone icon
 import {
     Button,
     Dialog,
@@ -17,6 +19,9 @@ function DialogWithForm() {
     const [inputText, setInputText] = useState("");
     const [reversedText, setReversedText] = useState("");
     const [submittedText, setSubmittedText] = useState("");
+
+    // New state variable to track voice input mode
+    const [voiceInputActive, setVoiceInputActive] = useState(false);
 
     // Clear input and output boxes when the dialog is initially opened
     useEffect(() => {
@@ -59,6 +64,11 @@ function DialogWithForm() {
         }
     };
 
+    // Function to toggle voice input mode
+    const toggleVoiceInput = () => {
+        setVoiceInputActive((prevState) => !prevState);
+    };
+
     return (
         <>
             <div className="fixed bottom-4 right-4 z-50">
@@ -68,23 +78,23 @@ function DialogWithForm() {
                     onClick={handleOpen}
                     className="cursor-pointer h-9 w-9 sm:h-12 sm:w-12"
                 />
-                {open && <div className="fixed inset-0 backdrop-blur-sm bg-white opacity-60 blur flex items-center justify-center"></div>}
+                {open && <div className="fixed inset-0 backdrop-blur-sm opacity-60 blur flex items-center justify-center"></div>}
                 <Dialog
                     size="xs"
                     open={open}
                     handler={handleOpen}
-                    className="bg-transparent shadow-none flex items-center justify-center"
+                    className="bg-transparent flex items-center justify-center"
                 >
                     <Card className="h-full max-w-[30rem] rounded-md">
-                        <CardHeader className="p-4">
+                        <CardHeader className="p-4 flex justify-center">
                             <img
-                                src="https://images.unsplash.com/photo-1657302156083-2e61fb23d161?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2970&q=80"
+                                src={logo}
                                 alt="Card Image"
-                                className="w-full rounded-2xl shadow-lg"
+                                className="h-72 w-72 rounded-2xl shadow-lg"
                             />
                         </CardHeader>
                         <h1 className="text-2xl font-semibold text-center">English To हिंदी</h1>
-                        {/* <h3 className="text-center">(अंग्रेज़ी से हिंदी)</h3> */}
+                        <h3 className="text-center">(अंग्रेज़ी से हिंदी)</h3>
                         <form onSubmit={handleTranslate} className="flex flex-col items-center"> {/* Move onSubmit here */}
                             <CardBody className="gap-4">
                                 <input
@@ -92,7 +102,7 @@ function DialogWithForm() {
                                     placeholder="Enter text"
                                     value={inputText}
                                     onChange={(e) => setInputText(e.target.value)}
-                                    className="w-[28rem] h-100 px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                                    className="w-[20rem] h-100 px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
                                 />
                             </CardBody>
                             <CardFooter className="pt-0">
@@ -102,8 +112,17 @@ function DialogWithForm() {
                                 >
                                     Translate
                                 </button>
+                                {/* Button for voice input */}
+                                <button
+                                    onClick={toggleVoiceInput}
+                                    className={`bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 text-center w-100 ml-10 ${voiceInputActive ? "bg-red-500" : ""
+                                        }`}
+                                >
+                                    {voiceInputActive ? "Active" : "Voice Input"}
+                                </button>
                             </CardFooter>
                         </form>
+
                         {submittedText && (
                             <div className="mt-2 px-4">
                                 <strong>Input:</strong>

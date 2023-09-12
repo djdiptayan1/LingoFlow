@@ -57,7 +57,7 @@ const TeamDisplay = () => {
 
         <div className="flex justify-center items-center h-screen">
             <div>
-                <h1 className="text-5xl font-Pacifico text-center underline dark:text-white">Team</h1>
+                <h1 className="text-5xl font-Pacifico text-center underline dark:text-white pb-4">Team</h1>
                 <div className="flex flex-wrap">
                     {/* Render the first row */}
                     {firstRow.map((member, index) => (
