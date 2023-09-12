@@ -11,7 +11,7 @@ const landing_page = () => {
         <>
             <div className=' min-h-screen bg-gradient-to-b from-zinc-800 to-zinc-700'>
                 <Hero />
-                <CardDefaults />
+                {/* <CardDefaults /> */}
                 <DialogWithForm />
                 <TechStack />
                 <TeamDisplay />

@@ -3,12 +3,21 @@ import "animate.css";
 import heroimg from "../assets/hero2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-
+import herobg from "../assets/bg2.jpeg";
 
 const hero = () => {
+    const backgroundStyle = {
+        backgroundImage: `url(${herobg})`,
+        backgroundSize: "cover", // Adjust to your needs
+        backgroundPosition: "center center", // Adjust to your needs
+        backgroundRepeat: "no-repeat", // Adjust to your needs
+        // Apply blur effect using backdrop-filter
+        backdropFilter: "blur(10px)", // Adjust the blur strength as needed
+    };
+
     return (
         <>
-            <div className="h-screen w-screen ">
+            <div className="h-screen w-screen" style={backgroundStyle}>
                 <img src={heroimg} alt="hero" className="h-screen w-screen z-999" />
 
                 {/* Scroll down animated text with arrow */}
