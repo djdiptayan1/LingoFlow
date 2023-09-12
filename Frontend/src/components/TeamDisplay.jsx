@@ -49,33 +49,21 @@ const TeamDisplay = () => {
         },
     ];
 
-    // Split the team members into two rows
-    const firstRow = teamMembers.slice(0, 3);
-    const secondRow = teamMembers.slice(3);
+    
+   
 
     return (
 
-        <div className="flex justify-center items-center h-screen">
-            <div>
-                <h1 className="text-5xl font-Pacifico text-center underline dark:text-white pb-4">Team</h1>
-                <div className="flex flex-wrap">
-                    {/* Render the first row */}
-                    {firstRow.map((member, index) => (
-                        <div key={index} className="w-full md:w-1/3 p-2">
-                            <TeamMemberCard {...member} />
-                        </div>
-                    ))}
-                </div>
-                <div className="flex flex-wrap mt-4">
-                    {/* Render the second row */}
-                    {secondRow.map((member, index) => (
-                        <div key={index} className="w-full md:w-1/3 p-2">
-                            <TeamMemberCard {...member} />
-                        </div>
-                    ))}
-                </div>
+        <section className="flex flex-col justify-center items-center h-auto my-12">
+            <h1 className="text-6xl font-Dance font-medium text-center underline dark:text-white pb-4">Team</h1>
+            <div className="flex flex-wrap md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-24">
+                {teamMembers.map((member, index) => (
+                    <TeamMemberCard key={index} {...member} />
+                ))}
             </div>
-        </div>
+                
+            
+        </section>
     );
 };
 
