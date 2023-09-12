@@ -3,6 +3,7 @@ import Hero from './hero'
 import CardDefaults from "./CardDefault";
 import DialogWithForm from "./DialogWithForm";
 import TeamDisplay from "./TeamDisplay";
+import TechStack from './TechStack';
 
 const landing_page = () => {
     return (
@@ -11,6 +12,7 @@ const landing_page = () => {
                 <Hero />
                 <CardDefaults />
                 <DialogWithForm />
+                <TechStack />
                 <TeamDisplay />
             </div>
         </>
