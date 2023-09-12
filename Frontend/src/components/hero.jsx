@@ -8,7 +8,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 const hero = () => {
     return (
         <>
-            <div className="h-screen w-screen">
+            <div className="h-screen w-screen ">
                 <img src={heroimg} alt="hero" className="h-screen w-screen z-999" />
 
                 {/* Scroll down animated text with arrow */}
