@@ -1,0 +1,10 @@
+sentencepiece
+torch
+transformers
+matplotlib
+numpy
+keras
+h5py
+gtts
+SpeechRecognition
+pyaudio
