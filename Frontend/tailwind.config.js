@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         Pacifico: ["Pacifico", "cursive"],
         Prism: ["Tilt Prism", "cursive"],
+        Dance: ["Dancing Script", "cursive"],
       },
     },
   },

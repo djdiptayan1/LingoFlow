@@ -22,7 +22,7 @@ const imglist = [
 const TechStack = () => {
     return (
         <>
-            <h1 className="text-5xl dark:text-white font-Pacifico flex justify-center items-center mt-8 pb-5">Tech Stack</h1>
+            <h1 className="dark:text-white text-6xl font-Dance font-medium  flex justify-center items-center mt-8 pb-5">Tech Stack</h1>
             
             <section className="flex md:flex-row flex-wrap justify-center items-center">
                 {imglist.map((img, index) => (
