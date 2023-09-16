@@ -20,6 +20,8 @@ function DialogWithForm() {
     const [inputText, setInputText] = useState("");
     const [reversedText, setReversedText] = useState("");
     const [submittedText, setSubmittedText] = useState("");
+    const [Emotion, setEmotionText] = useState("");
+    const [Emotion_translate, setEmotionTranslate] = useState("");
 
     // New state variable to track voice input mode
     const [voiceInputActive, setVoiceInputActive] = useState(false);
@@ -30,6 +32,7 @@ function DialogWithForm() {
             setInputText("");
             setReversedText("");
             setSubmittedText("");
+            setEmotionText("");
         }
     }, [open]);
 
@@ -58,7 +61,11 @@ function DialogWithForm() {
             }
 
             const data = response.data;
-            setReversedText(data.reversedText);
+            setReversedText(data.Translated_text);
+            setEmotionText(data.emotionLabel);
+            setEmotionTranslate(data.Translated_emotion);
+            console.log(Emotion);
+            console.log(Emotion_translate);
             setSubmittedText(inputText); // Store the submitted input text
         } catch (error) {
             console.error("Error:", error);
@@ -132,10 +139,19 @@ function DialogWithForm() {
                         )}
                         {reversedText && (
                             <div className="mt-4 px-4 mb-4">
-                                <strong>Output:</strong>
+                                <strong>
+                                    Output:
+                                </strong>
+                                    {Emotion && Emotion_translate && (
+                                        <span className="ml-2">
+                                            (Emotion: {Emotion} / {Emotion_translate})
+                                        </span>
+                                    )}
+                                
                                 <div className="bg-gray-100 p-2 rounded-md mt-2">{reversedText}</div>
                             </div>
                         )}
+
                     </Card>
                 </Dialog>
             </div>

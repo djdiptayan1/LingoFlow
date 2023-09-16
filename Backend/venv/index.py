@@ -1,34 +1,51 @@
-# To run the server:
-# export FLASK_APP=index.py                                                 ─╯
+# export FLASK_APP=index.py 
 # export FLASK_ENV=development
-# flask run
+# flask run 
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from transformers import pipeline
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+from transformers import pipeline, AutoModelForSeq2SeqLM, AutoTokenizer
 
 app = Flask(__name__)
 CORS(app)
 
+# Create a translation pipeline
+translation_pipe = pipeline("translation", model="Helsinki-NLP/opus-mt-en-hi")
+
+# Create an emotion classification pipeline
+emotion_classification_pipe = pipeline("text-classification", model="SamLowe/roberta-base-go_emotions")
+
 @app.route("/reverse", methods=["POST"])
-def reverse_text():
+def Translate():
     try:
         data = request.get_json()
-        # get the input text from the request
+        # Get the input text from the request
         input_text = data["input"]
 
-        model = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-en-hi")
-        tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-en-hi")
-        translation = pipeline("translation_en_to_hi", model=model, tokenizer=tokenizer)
-        translated_text = translation(input_text, max_length=500)[0]['translation_text']
+        # Use the translation pipeline to translate the text
+        translation_result = translation_pipe(input_text, src_lang='en', tgt_lang='hi')
+        translated_text = translation_result[0]['translation_text']
 
-        reversed_text = input_text[::-1]  # Reverse the input text
-        
-        
-        print(f"Received Input text: {input_text}")  # Log the received input text
-        response_data = {"reversedText": translated_text}
-        print(f"Reversed text: {translated_text}")  # Log the reversed text
+        # Use the emotion classification pipeline to classify emotion
+        emotion_result = emotion_classification_pipe(input_text)
+        emotion_label = emotion_result[0]['label']
+
+        # Use the translation pipeline to translate the emotion
+        translation_emotion = translation_pipe(emotion_label, src_lang='en', tgt_lang='hi')
+        translated_emotion = translation_emotion[0]['translation_text']
+
+
+        # Log the received input text, translated text, and emotion label
+        print(f"Received Input text: {input_text}")
+        print(f"Translated text: {translated_text}")
+        print(f"Emotion label: {emotion_label}")
+
+        response_data = {
+            "Translated_text": translated_text,
+            "emotionLabel": emotion_label,
+            "Translated_emotion":translated_emotion
+        }
+
         return jsonify(response_data)
     except Exception as e:
         return jsonify({"error": str(e)}), 400
