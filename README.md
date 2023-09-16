@@ -34,5 +34,5 @@ Clone the reposatory
     
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img width="1512" alt="Screenshot 2023-09-17 at 2 23 09 AM" src="https://github.com/djdiptayan1/Smart_India_Hackathon/assets/111650788/45daad34-3243-4d81-8fd6-93a8f721b2c3">
 
