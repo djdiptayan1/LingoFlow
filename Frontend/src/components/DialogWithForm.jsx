@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import menu from "../assets/menu.png";
 import axios from "axios";
-import logo from "../assets/logo2.png";
+import logo from "../assets/logo_nobg.png";
 import microphoneIcon from "../assets/microphone.png"; // Import microphone icon
 
 import {
@@ -93,16 +93,16 @@ function DialogWithForm() {
                     handler={handleOpen}
                     className="bg-transparent flex items-center justify-center"
                 >
-                    <Card className="h-full max-w-[30rem] rounded-md">
-                        <CardHeader className="p-4 flex justify-center">
+                    <Card className="h-full max-w-[30rem] rounded-md dark:bg-gray-800">
+                        <CardHeader className="p-4 flex justify-center rounded-md mt-4 bg-transparent">
                             <img
                                 src={logo}
                                 alt="Card Image"
-                                className="h-72 w-72 rounded-2xl "
+                                className="h-72 w-72 rounded-2xl"
                             />
                         </CardHeader>
-                        <h1 className="text-2xl font-semibold text-center">English To हिंदी</h1>
-                        <h3 className="text-center">(अंग्रेज़ी से हिंदी)</h3>
+                        <h1 className="text-2xl font-semibold text-center dark:text-white">English To हिंदी</h1>
+                        <h3 className="text-center dark:text-white">(अंग्रेज़ी से हिंदी)</h3>
                         <form onSubmit={handleTranslate} className="flex flex-col items-center"> {/* Move onSubmit here */}
                             <CardBody className="gap-4">
                                 <input
@@ -132,13 +132,13 @@ function DialogWithForm() {
                         </form>
 
                         {submittedText && (
-                            <div className="mt-2 px-4">
+                            <div className="mt-2 px-4 dark:text-white">
                                 <strong>Input:</strong>
-                                <div className="bg-gray-100 p-2 rounded-md mt-2">{submittedText}</div>
+                                <div className="bg-gray-100 p-2 rounded-md mt-2 dark:text-black">{submittedText}</div>
                             </div>
                         )}
                         {reversedText && (
-                            <div className="mt-4 px-4 mb-4">
+                            <div className="mt-4 px-4 mb-4 dark:text-white">
                                 <strong>
                                     Output:
                                 </strong>
@@ -148,7 +148,7 @@ function DialogWithForm() {
                                         </span>
                                     )}
                                 
-                                <div className="bg-gray-100 p-2 rounded-md mt-2">{reversedText}</div>
+                                <div className="bg-gray-100 p-2 rounded-md mt-2 dark:text-black">{reversedText}</div>
                             </div>
                         )}
 

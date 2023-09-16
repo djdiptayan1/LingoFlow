@@ -21,7 +21,7 @@ import { AiFillGithub, AiOutlineInstagram } from 'react-icons/ai'
 const TeamMemberCard = ({ name, image, githubLink, instagramLink }) => {
   return (
     
-      <Card h='lg' w='sm' >
+      <Card h='lg' w='sm'>
         <CardBody>
           <Image
             src={image}
