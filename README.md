@@ -36,3 +36,4 @@ Clone the reposatory
 
 <img width="1512" alt="Screenshot 2023-09-17 at 2 23 09 AM" src="https://github.com/djdiptayan1/Smart_India_Hackathon/assets/111650788/45daad34-3243-4d81-8fd6-93a8f721b2c3">
 
+<img width="1512" alt="Screenshot 2023-09-17 at 2 24 45 AM" src="https://github.com/djdiptayan1/Smart_India_Hackathon/assets/111650788/13b6cb28-b88c-4437-8008-c7017a82fead">
