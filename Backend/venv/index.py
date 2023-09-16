@@ -1,3 +1,8 @@
+# To run the server:
+# export FLASK_APP=index.py                                                 ─╯
+# export FLASK_ENV=development
+# flask run
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from transformers import pipeline
