@@ -1,5 +1,6 @@
 
-![Logo](https://drive.google.com/file/d/1oc8HvVwtQC8alXtWjWeowGD-bCOlMgyg/view?usp=sharing)
+![Logo](<img width="596" alt="hero2" src="https://github.com/djdiptayan1/Smart_India_Hackathon/assets/111650788/2988f909-5f82-4769-9ad2-c7016b3a9ca4">)
+
 
 
 # LingoFlow
